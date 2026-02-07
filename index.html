@@ -7,10 +7,16 @@
 </head>
 <body>
 
+
   <h1>積みゲー管理メモ</h1>
 
+<p>積みゲーを管理するためのメモです。</p>
+<p>ゲームタイトルを書いた後に、Enterキーか追加ボタンで追加できます。</p>
+<p>コンソール名（Switch、PS5など）や、進行状況の軽いメモを記録できます。</p>
+<p>クリアしたゲームは削除ボタンで一覧から削除できます。</p>
+
   <!-- 一覧表示 -->
-  <table>
+   <table border="1">
     <thead>
       <tr>
         <th>ゲームタイトル</th>
@@ -25,11 +31,12 @@
   </table>
 
   <!-- 追加フォーム -->
-  <div id="form">
+  <div id="form" onkeydown="handleKey(event)">
     <input type="text" id="title" placeholder="ゲームタイトル">
-    <input type="text" id="console" placeholder="コンソール">
+    <input type="text" id="consoleName" placeholder="コンソール">
     <input type="text" id="memo" placeholder="メモ">
-    <button id="add-btn">追加</button>
+  <!-- JavaScriptの関数で入力内容を追加する -->
+    <button onclick="addGame()">追加</button>
   </div>
 
   <script src="script.js"></script>
